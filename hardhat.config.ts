@@ -1,11 +1,11 @@
-import "@nomiclabs/hardhat-waffle";
-import { task } from "hardhat/config";
+import '@nomiclabs/hardhat-waffle';
+import { task } from 'hardhat/config';
 import 'hardhat-deploy';
-import 'dotenv/config'
+import 'dotenv/config';
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (args, hre) => {
+task('accounts', 'Prints the list of accounts', async (args, hre) => {
   const accounts = await hre.ethers.getSigners();
 
   for (const account of accounts) {
@@ -22,7 +22,7 @@ task("accounts", "Prints the list of accounts", async (args, hre) => {
 const key = process.env.WALLET_PRIVATE_KEY;
 
 export default {
-  solidity: "0.8.4",
+  solidity: '0.8.4',
   networks: {
     fantomTestnet: {
       url: 'https://rpc.testnet.fantom.network/',
@@ -41,5 +41,5 @@ export default {
       gasPrice: 1600000000,
       accounts: [key],
     },
-  }
+  },
 };
